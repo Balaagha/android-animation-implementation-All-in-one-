@@ -5,7 +5,6 @@ plugins {
     id(Plugins.kotlinAndroidExtensions)
     id(Plugins.navigationSafeArgsKotlin)
     id(Plugins.daggerHiltAndroidPlugin)
-    id("org.jetbrains.kotlin.android")
 }
 
 android {
@@ -32,6 +31,7 @@ android {
     }
 
     buildFeatures {
+        viewBinding = ConfigData.viewBinding
         dataBinding = ConfigData.dataBinding
     }
 

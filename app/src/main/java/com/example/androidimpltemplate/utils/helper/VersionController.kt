@@ -2,6 +2,11 @@ package com.example.androidimpltemplate.utils.helper
 
 import android.os.Build
 
+
+fun isVersionInRange(intRange: IntRange): Boolean {
+    return Build.VERSION.SDK_INT in intRange
+}
+
 fun isVersionHigherAndEqual(version: Int): Boolean {
     return Build.VERSION.SDK_INT >= version
 }

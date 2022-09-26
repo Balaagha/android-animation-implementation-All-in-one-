@@ -14,7 +14,8 @@ object ConfigData {
     const val defaultProguardFile = "proguard-android-optimize.txt"
     const val proguardRules = "proguard-rules.pro"
 
-    const val dataBinding = true
+    const val dataBinding = false
+    const val viewBinding = true
 
 }
 

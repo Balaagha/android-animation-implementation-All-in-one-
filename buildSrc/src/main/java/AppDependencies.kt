@@ -54,6 +54,10 @@ object AppDependencies {
 
         add(Glide.glideImpl)
 
+        add(InSetter.core)
+        add(InSetter.dbx)
+        add(InSetter.widgets)
+
     }
 
     val commonKaptLibraries = arrayListOf<String>().apply {
@@ -223,6 +227,15 @@ object AppDependencies {
         // optional - GCMNetworkManager support
         val workGcm = "androidx.work:work-gcm:$work_version"
 
+    }
+
+    object InSetter {
+        private const val version = "0.4.0"
+
+        // The base library. If you're using either the dbx and/or ktx libraries, you don't need this
+        val core = "dev.chrisbanes.insetter:insetter:$version"
+        val dbx = "dev.chrisbanes.insetter:insetter-dbx:$version"
+        val widgets = "dev.chrisbanes.insetter:insetter-widgets:$version"
     }
 
 }
