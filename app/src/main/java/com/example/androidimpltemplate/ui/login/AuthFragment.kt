@@ -5,14 +5,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.commit
+import androidx.fragment.app.activityViewModels
 import com.example.androidimpltemplate.R
 import com.example.androidimpltemplate.databinding.FragmentAuthBinding
 import com.example.androidimpltemplate.utils.extentions.changeStatusBarVisibility
+import dagger.hilt.android.AndroidEntryPoint
 import dev.chrisbanes.insetter.applySystemWindowInsetsToPadding
 
 
+@AndroidEntryPoint
 class AuthFragment : Fragment() {
+
+    private val viewModel by activityViewModels<AuthViewModel>()
 
     private var _binding: FragmentAuthBinding? = null
     private val binding get() = _binding!!
@@ -34,14 +38,10 @@ class AuthFragment : Fragment() {
 
     private fun initOnClickListener() {
         binding.signIn.setOnClickListener {
-            showLogin()
+            viewModel.onSignInPressed()
         }
-    }
-
-    private fun showLogin() {
-        parentFragmentManager.commit {
-            replace(R.id.fragmentContainer, LoginFragment.newInstance())
-            addToBackStack(null)
+        binding.newSignUp.setOnClickListener {
+            viewModel.onNewUserPressed()
         }
     }
 
