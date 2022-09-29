@@ -6,11 +6,15 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.WindowInsets
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.commit
+import androidx.fragment.app.viewModels
 import com.example.androidimpltemplate.R
 import com.example.androidimpltemplate.databinding.FragmentLoginBinding
 
 class LoginFragment : Fragment() {
+
+    private val viewModel by activityViewModels<AuthViewModel>()
 
     private val binding get() = _binding!!
     private var _binding: FragmentLoginBinding? = null
@@ -30,6 +34,9 @@ class LoginFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding.loginButton.setOnClickListener {
+            viewModel.onLoginPressed()
+        }
     }
 
     override fun onDestroyView() {

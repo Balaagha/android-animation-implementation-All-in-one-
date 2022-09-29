@@ -1,5 +1,6 @@
 package com.example.androidimpltemplate.ui.login
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.activity.viewModels
@@ -7,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.commit
 import com.example.androidimpltemplate.R
 import com.example.androidimpltemplate.databinding.ActivityAuthBinding
+import com.example.androidimpltemplate.ui.mainpage.MainPageActivity
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -29,6 +31,10 @@ class AuthActivity : AppCompatActivity() {
         }
         viewModel.showSignUp.observe(this) {
             showSignup()
+        }
+        viewModel.showMain.observe(this) {
+            startActivity(Intent(this, MainPageActivity::class.java))
+            overridePendingTransition(R.anim.auth_main_enter, R.anim.auth_main_exit)
         }
     }
 
