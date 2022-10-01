@@ -7,7 +7,7 @@
 
   <fragment
     android:id="@+id/popularMoviesFragment"
-    android:name="com.example.androidimpltemplate.ui.mainpage.views.PopularMoviesFragment"
+    android:name="com.example.androidimpltemplate.ui.miniapplicationforanimation.mainpage.views.PopularMoviesFragment"
     android:label="PopularMoviesFragment"
     tools:layout="@layout/fragment_popular">
     <action
@@ -21,7 +21,7 @@
 
   <fragment
     android:id="@+id/favoriteMoviesFragment"
-    android:name="com.example.androidimpltemplate.ui.mainpage.views.FavoriteMoviesFragment"
+    android:name="com.example.androidimpltemplate.ui.miniapplicationforanimation.mainpage.views.FavoriteMoviesFragment"
     android:label="FavoriteMoviesFragment"
     tools:layout="@layout/fragment_favorites">
     <action
@@ -34,7 +34,7 @@
   </fragment>
   <fragment
     android:id="@+id/movieDetailsFragment"
-    android:name="com.example.androidimpltemplate.ui.mainpage.views.MovieDetailsFragment"
+    android:name="com.example.androidimpltemplate.ui.miniapplicationforanimation.mainpage.views.MovieDetailsFragment"
     android:label="MovieDetailsFragment"
     tools:layout="@layout/fragment_details">
     <argument

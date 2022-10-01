@@ -14,7 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidMvvmCleanArchitectureExample">
         <activity
-            android:name="com.example.androidimpltemplate.menu.MenuActivity"
+            android:name="com.example.androidimpltemplate.ui.menu.MenuActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,16 +23,12 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.mainpage.MainPageActivity"
+            android:name="com.example.androidimpltemplate.ui.miniapplicationforanimation.mainpage.MainPageActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.login.AuthActivity"
+            android:name="com.example.androidimpltemplate.ui.miniapplicationforanimation.login.AuthActivity"
             android:exported="true"
             android:windowSoftInputMode="adjustResize"/>
-
-        <activity
-            android:name="com.example.androidimpltemplate.menu.menuui.MainActivity"
-            android:exported="true" />
     </application>
 
 </manifest>

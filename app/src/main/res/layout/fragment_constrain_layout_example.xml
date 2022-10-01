@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".menu.menuui.ConstrainLayoutExampleFragment">
+    tools:context=".ui.animationexamples.ConstrainLayoutExampleFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
