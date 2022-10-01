@@ -2,14 +2,13 @@ package com.example.androidimpltemplate.ui.mainpage
 
 import android.os.Bundle
 import android.view.View
-import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.example.androidimpltemplate.R
 import com.example.androidimpltemplate.databinding.ActivityMainPageBinding
-import com.example.androidimpltemplate.ui.mainpage.viewmodels.AnimationViewModel
 import dagger.hilt.android.AndroidEntryPoint
+
 
 @AndroidEntryPoint
 class MainPageActivity : AppCompatActivity() {

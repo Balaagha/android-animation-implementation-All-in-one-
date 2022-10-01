@@ -1,4 +1,4 @@
-package com.example.androidimpltemplate.ui
+package com.example.androidimpltemplate.menu.menuui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
