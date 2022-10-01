@@ -1,29 +1,25 @@
 package com.example.androidimpltemplate.ui.mainpage.views
 
-import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import androidx.appcompat.content.res.AppCompatResources.getDrawable
-import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import coil.load
 import coil.transform.BlurTransformation
 import com.example.androidimpltemplate.R
+import com.example.androidimpltemplate.base.BaseFragment
 import com.example.androidimpltemplate.data.database.feature.movies.model.CachedMovieModel
 import com.example.androidimpltemplate.databinding.FragmentDetailsBinding
 import com.example.androidimpltemplate.ui.mainpage.adapter.CastAdapter
 import com.example.androidimpltemplate.ui.mainpage.viewmodels.MovieDetailsViewModel
 import com.example.androidimpltemplate.utils.Constants.IMAGE_BASE
+import com.example.androidimpltemplate.utils.extentions.changeStatusBarVisibility
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class MovieDetailsFragment : Fragment(R.layout.fragment_details) {
+class MovieDetailsFragment : BaseFragment<FragmentDetailsBinding>(FragmentDetailsBinding::inflate) {
 
-  private var _binding: FragmentDetailsBinding? = null
-  private val binding get() = _binding!!
+  override var statusBarVisibility: Boolean? = false
 
   private val args: MovieDetailsFragmentArgs by navArgs()
 
@@ -33,21 +29,11 @@ class MovieDetailsFragment : Fragment(R.layout.fragment_details) {
     CastAdapter()
   }
 
-  override fun onCreateView(
-      inflater: LayoutInflater,
-      container: ViewGroup?,
-      savedInstanceState: Bundle?,
-  ): View {
-    _binding = FragmentDetailsBinding.inflate(inflater, container, false)
-    return binding.root
-  }
-
-  override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-    super.onViewCreated(view, savedInstanceState)
+  override fun setup() {
     binding.castList.apply {
       adapter = castAdapter
       layoutManager =
-          LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+        LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
     }
 
     args.movieId.also {
@@ -93,6 +79,8 @@ class MovieDetailsFragment : Fragment(R.layout.fragment_details) {
         getString(R.string.add_to_favorites)
       }
       setOnClickListener {
+//        changeStatusBarVisibility(isVisible = false, defaultStatusBarColor)
+
         if (movie.isFavorite) {
           viewModel.unsetMovieAsFavorite(movie.id)
         } else {

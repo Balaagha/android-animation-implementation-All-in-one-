@@ -9,6 +9,7 @@ import androidx.fragment.app.commit
 import com.example.androidimpltemplate.R
 import com.example.androidimpltemplate.databinding.ActivityAuthBinding
 import com.example.androidimpltemplate.ui.mainpage.MainPageActivity
+import com.example.androidimpltemplate.utils.extentions.navigateToTargetFragment
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -39,18 +40,17 @@ class AuthActivity : AppCompatActivity() {
     }
 
     private fun showLogin() {
-        supportFragmentManager.commit {
-            replace(R.id.fragmentContainer, LoginFragment.newInstance())
-            addToBackStack(null)
-        }
+        navigateToTargetFragment(
+            containerId = R.id.fragmentContainer,
+            targetFragment = LoginFragment.newInstance()
+        )
     }
 
     private fun showSignup() {
-        supportFragmentManager.commit {
-            replace(R.id.fragmentContainer, SignUpFragment.newInstance())
-            addToBackStack(null)
-        }
+        navigateToTargetFragment(
+            containerId = R.id.fragmentContainer,
+            targetFragment = SignUpFragment.newInstance()
+        )
     }
-
 
 }
