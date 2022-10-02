@@ -11,7 +11,7 @@ import com.example.androidimpltemplate.R
 import com.example.androidimpltemplate.databinding.FragmentMenuBinding
 import com.example.androidimpltemplate.ui.menu.adapter.MenuItemsArrayAdapter
 import com.example.androidimpltemplate.ui.menu.itemsenum.MenuItemsEnum
-import com.example.androidimpltemplate.ui.animationexamples.ConstrainLayoutExampleFragment
+import com.example.androidimpltemplate.ui.animationexamples.ConstrainLayoutFadeInOutAnimationFragment
 import com.example.androidimpltemplate.ui.miniapplicationforanimation.login.AuthActivity
 
 class MenuFragment : Fragment(), MenuItemsArrayAdapter.Listener {
@@ -50,7 +50,7 @@ class MenuFragment : Fragment(), MenuItemsArrayAdapter.Listener {
                     supportFragmentManager.commit {
                         replace(
                             R.id.fragmentMenuContainer,
-                            ConstrainLayoutExampleFragment.newInstance()
+                            ConstrainLayoutFadeInOutAnimationFragment.newInstance()
                         )
                         addToBackStack(null)
                     }
