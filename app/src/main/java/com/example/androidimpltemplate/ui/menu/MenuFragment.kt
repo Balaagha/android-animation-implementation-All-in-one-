@@ -9,9 +9,11 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.commit
 import com.example.androidimpltemplate.R
 import com.example.androidimpltemplate.databinding.FragmentMenuBinding
+import com.example.androidimpltemplate.ui.animationexamples.ConstrainLayoutFadeInOutAnimationFragment
+import com.example.androidimpltemplate.ui.animationexamples.ConstrainLayoutKeyFramesAnimationWithConstraintSetFragment
+import com.example.androidimpltemplate.ui.animationexamples.ConstrainLayoutOutStandingAnimationFragment
 import com.example.androidimpltemplate.ui.menu.adapter.MenuItemsArrayAdapter
 import com.example.androidimpltemplate.ui.menu.itemsenum.MenuItemsEnum
-import com.example.androidimpltemplate.ui.animationexamples.ConstrainLayoutFadeInOutAnimationFragment
 import com.example.androidimpltemplate.ui.miniapplicationforanimation.login.AuthActivity
 
 class MenuFragment : Fragment(), MenuItemsArrayAdapter.Listener {
@@ -46,11 +48,29 @@ class MenuFragment : Fragment(), MenuItemsArrayAdapter.Listener {
                 MenuItemsEnum.AUTH_ACTIVITY -> {
                     startActivity(Intent(this, AuthActivity::class.java))
                 }
-                MenuItemsEnum.CONSTRAIN_LAYOUT_ANIMATION_ACTIVITY -> {
+                MenuItemsEnum.CONSTRAIN_LAYOUT_FADE_IN_OUT_ANIMATION -> {
                     supportFragmentManager.commit {
                         replace(
                             R.id.fragmentMenuContainer,
                             ConstrainLayoutFadeInOutAnimationFragment.newInstance()
+                        )
+                        addToBackStack(null)
+                    }
+                }
+                MenuItemsEnum.CONSTRAIN_LAYOUT_OUT_STANDING_ANIMATION -> {
+                    supportFragmentManager.commit {
+                        replace(
+                            R.id.fragmentMenuContainer,
+                            ConstrainLayoutOutStandingAnimationFragment.newInstance()
+                        )
+                        addToBackStack(null)
+                    }
+                }
+                MenuItemsEnum.CONSTRAIN_LAYOUT_KEY_FRAMES_WITH_CONSTRAIN_SET_ANIMATION -> {
+                    supportFragmentManager.commit {
+                        replace(
+                            R.id.fragmentMenuContainer,
+                            ConstrainLayoutKeyFramesAnimationWithConstraintSetFragment.newInstance()
                         )
                         addToBackStack(null)
                     }
