@@ -9,10 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.commit
 import com.example.androidimpltemplate.R
 import com.example.androidimpltemplate.databinding.FragmentMenuBinding
-import com.example.androidimpltemplate.ui.animationexamples.AnimationInCodeBasicImplFragment
-import com.example.androidimpltemplate.ui.animationexamples.ConstrainLayoutFadeInOutAnimationFragment
-import com.example.androidimpltemplate.ui.animationexamples.ConstrainLayoutKeyFramesAnimationWithConstraintSetFragment
-import com.example.androidimpltemplate.ui.animationexamples.ConstrainLayoutOutStandingAnimationFragment
+import com.example.androidimpltemplate.ui.animationexamples.*
 import com.example.androidimpltemplate.ui.animationexamples.transitionwithnavgraph.SharedTransitionWithNavGraphContainerActivity
 import com.example.androidimpltemplate.ui.animationexamples.transitionwithnavgraph.SharedTransitionWithNavGraphContainerFragment
 import com.example.androidimpltemplate.ui.menu.adapter.MenuItemsArrayAdapter
@@ -83,6 +80,15 @@ class MenuFragment : Fragment(), MenuItemsArrayAdapter.Listener {
                         replace(
                             R.id.fragmentMenuContainer,
                             AnimationInCodeBasicImplFragment.newInstance()
+                        )
+                        addToBackStack(null)
+                    }
+                }
+                MenuItemsEnum.VIEW_PROPERTY_ANIMATION_IMPL -> {
+                    supportFragmentManager.commit {
+                        replace(
+                            R.id.fragmentMenuContainer,
+                            ViewPropertyAnimationImplFragment.newInstance()
                         )
                         addToBackStack(null)
                     }
