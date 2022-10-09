@@ -13,6 +13,8 @@ import com.example.androidimpltemplate.ui.animationexamples.AnimationInCodeBasic
 import com.example.androidimpltemplate.ui.animationexamples.ConstrainLayoutFadeInOutAnimationFragment
 import com.example.androidimpltemplate.ui.animationexamples.ConstrainLayoutKeyFramesAnimationWithConstraintSetFragment
 import com.example.androidimpltemplate.ui.animationexamples.ConstrainLayoutOutStandingAnimationFragment
+import com.example.androidimpltemplate.ui.animationexamples.transitionwithnavgraph.SharedTransitionWithNavGraphContainerActivity
+import com.example.androidimpltemplate.ui.animationexamples.transitionwithnavgraph.SharedTransitionWithNavGraphContainerFragment
 import com.example.androidimpltemplate.ui.menu.adapter.MenuItemsArrayAdapter
 import com.example.androidimpltemplate.ui.menu.itemsenum.MenuItemsEnum
 import com.example.androidimpltemplate.ui.miniapplicationforanimation.login.AuthActivity
@@ -84,6 +86,17 @@ class MenuFragment : Fragment(), MenuItemsArrayAdapter.Listener {
                         )
                         addToBackStack(null)
                     }
+                }
+                MenuItemsEnum.SHARED_TRANSITION_ANIMATION_WITH_NAV_GRAPH_EXAMPLE -> {
+//                    supportFragmentManager.commit {
+//                        replace(
+//                            R.id.fragmentMenuContainer,
+//                            SharedTransitionWithNavGraphContainerFragment.newInstance()
+//                        )
+//                        addToBackStack(null)
+//                    }
+                    startActivity(Intent(this, SharedTransitionWithNavGraphContainerActivity::class.java))
+
                 }
                 else -> {
                     /** // nothing impl} */

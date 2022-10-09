@@ -7,6 +7,7 @@ enum class MenuItemsEnum(name: String) {
     CONSTRAIN_LAYOUT_OUT_STANDING_ANIMATION("Constrain layout out standing animation Example (keyframes)"),
     CONSTRAIN_LAYOUT_KEY_FRAMES_WITH_CONSTRAIN_SET_ANIMATION("Constrain layout key frames with constrain set animation Example"),
     BASIC_VIEW_ANIMATION_WITH_CODE_AND_XML("Basic View Animation with code and xml"),
+    SHARED_TRANSITION_ANIMATION_WITH_NAV_GRAPH_EXAMPLE("Shared Transition Animation with nav graph"),
     ;
 
 

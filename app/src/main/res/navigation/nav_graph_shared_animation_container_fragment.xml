@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_shared_animation_container_fragment"
+    app:startDestination="@id/sharedTransitionWithNavGraphAFragment">
+
+
+    <fragment
+        android:id="@+id/sharedTransitionWithNavGraphAFragment"
+        android:name="com.example.androidimpltemplate.ui.animationexamples.transitionwithnavgraph.SharedTransitionWithNavGraphAFragment"
+        android:label="SharedTransitionWithNavGraphAFragment" >
+        <action
+            android:id="@+id/action_sharedTransitionWithNavGraphAFragment_to_sharedTransitionWithNavGraphBFragment"
+            app:destination="@id/sharedTransitionWithNavGraphBFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/sharedTransitionWithNavGraphBFragment"
+        android:name="com.example.androidimpltemplate.ui.animationexamples.transitionwithnavgraph.SharedTransitionWithNavGraphBFragment"
+        android:label="SharedTransitionWithNavGraphBFragment" />
+</navigation>

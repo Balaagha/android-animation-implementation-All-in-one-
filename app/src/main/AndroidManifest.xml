@@ -14,8 +14,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidMvvmCleanArchitectureExample">
         <activity
+            android:name=".ui.animationexamples.transitionwithnavgraph.SharedTransitionWithNavGraphContainerActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.animationexamples.uifortransition.ExampleScreenForTransitionActivity"
-            android:exported="true"/>
+            android:exported="true" />
         <activity
             android:name="com.example.androidimpltemplate.ui.menu.MenuActivity"
             android:exported="true">
