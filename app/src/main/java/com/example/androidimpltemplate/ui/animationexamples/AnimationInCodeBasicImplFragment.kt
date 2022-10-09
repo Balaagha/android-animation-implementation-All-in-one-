@@ -1,6 +1,7 @@
 package com.example.androidimpltemplate.ui.animationexamples
 
 import android.content.Intent
+import android.graphics.drawable.Animatable
 import android.view.animation.*
 import androidx.fragment.app.commit
 import com.example.androidimpltemplate.R
@@ -16,6 +17,15 @@ class AnimationInCodeBasicImplFragment :
 
     override fun setup() {
         binding.apply {
+
+            // Frame animation implementation
+            frameAnimationStartBtn.setOnClickListener {
+                view.setBackgroundResource(R.drawable.my_frame_anim)
+                val bgAnim = view.background
+                if (bgAnim is Animatable){
+                    bgAnim.start()
+                }
+            }
             start.setOnClickListener {
                 val animationSet = getAnimationSetFromXml()
 //                val animationSet = getAnimationSetProgrammatically()
@@ -66,6 +76,7 @@ class AnimationInCodeBasicImplFragment :
 
     private fun getAnimationSetFromXml(): Animation? =
         AnimationUtils.loadAnimation(context, R.anim.basic_example_view_anim)
+
     private fun getAnimationSetProgrammatically(): Animation? {
         val animationSet = AnimationSet(true)
         animationSet.duration = 3000
