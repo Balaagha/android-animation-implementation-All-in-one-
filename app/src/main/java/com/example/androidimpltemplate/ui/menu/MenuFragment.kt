@@ -93,16 +93,22 @@ class MenuFragment : Fragment(), MenuItemsArrayAdapter.Listener {
                         addToBackStack(null)
                     }
                 }
+                MenuItemsEnum.TRANSITION_ANIMATION_WITH_BASIC_IMPL -> {
+                    supportFragmentManager.commit {
+                        replace(
+                            R.id.fragmentMenuContainer,
+                            TransitionAnimationWithBasicImplFragment.newInstance()
+                        )
+                        addToBackStack(null)
+                    }
+                }
                 MenuItemsEnum.SHARED_TRANSITION_ANIMATION_WITH_NAV_GRAPH_EXAMPLE -> {
-//                    supportFragmentManager.commit {
-//                        replace(
-//                            R.id.fragmentMenuContainer,
-//                            SharedTransitionWithNavGraphContainerFragment.newInstance()
-//                        )
-//                        addToBackStack(null)
-//                    }
-                    startActivity(Intent(this, SharedTransitionWithNavGraphContainerActivity::class.java))
-
+                    startActivity(
+                        Intent(
+                            this,
+                            SharedTransitionWithNavGraphContainerActivity::class.java
+                        )
+                    )
                 }
                 else -> {
                     /** // nothing impl} */
